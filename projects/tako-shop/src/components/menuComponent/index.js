@@ -64,6 +64,8 @@ const menuComponent = {
       api.get("/api/menu").then((res) => {
         const menu = res.data;
         menuStore.set(menu);
+        console.log("從API取得選單資料：", menu);
+        
         this.routes = menu;
       });
     }

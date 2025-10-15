@@ -1,8 +1,9 @@
 // @/pages/calendar/index.js
 
 import { createVueApp, defineComponent } from "@Vue";
-import allComponents from "@/pages/_allComponents.js"
-import pageComponents from "@/pages/calendar/_pageComponents.js"
+// import allComponents from "@/pages/_allComponents.js"
+// import pageComponents from "@/pages/calendar/_pageComponents.js"
+import Components from '@/components/components.js'  // 路徑依你實際調整
 
 export const initPage = async ({ container, api }) => {
   // 可加載資料、做權限驗證、登入等
@@ -114,9 +115,9 @@ export const initPage = async ({ container, api }) => {
 
   const app = createVueApp(App);
 
-  // DefaultLayout 從這邊載入註冊
-  app.use(allComponents)   // 常駐 元件註冊並注入 CSS
-  app.use(pageComponents)   // 集中分頁 元件註冊並注入 CSS
-  
+  // // DefaultLayout 從這邊載入註冊
+  // app.use(allComponents)   // 常駐 元件註冊並注入 CSS
+  // app.use(pageComponents)   // 集中分頁 元件註冊並注入 CSS
+  app.use(Components)
   app.mount("#app");
 };
